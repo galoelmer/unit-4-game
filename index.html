@@ -8,9 +8,65 @@
     <title>Star Wars RPG</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800|Bungee+Inline&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div id="container">
+        <h2 id="game-title">Star Wars RPG</h2>
+        <div id="characters">
+            <div class="card-character">
+                <img src="./assets/images/obiwan.gif" alt="Obiwan Kenobi">
+                <div class="card-character-name_hp">
+                    <h6>Obi-Wan Kenobi</h6>
+                    <h6>HP: <span id="hp">120</span></h6>
+                </div>
+            </div>
+            <div class="card-character">
+                <img src="./assets/images/grievous.gif" alt="General Grievous">
+                <div class="card-character-name_hp">
+                    <h6>General Grievous</h6>
+                    <h6>HP: <span id="hp">110</span></h6>
+                </div>
+            </div>
+            <div class="card-character">
+                <img src="./assets/images/dooku.gif" alt="Count Dooku">
+                <div class="card-character-name_hp">
+                    <h6>Count Dooku</h6>
+                    <h6>HP: <span id="hp">130</span></h6>
+                </div>
+            </div>
+            <div class="card-character">
+                <img src="./assets/images/anakin.gif" alt="Anakin Skywalker">
+                <div class="card-character-name_hp">
+                    <h6>Anakin Skywalker</h6>
+                    <h6>HP: <span id="hp">115</span></h6>
+                </div>
+            </div>
+        </div>
+
+        <section id="my-character-area">
+            <h3>Your Character</h3>
+            <div id="my-character"></div>
+        </section>
+
+        <section id="enemies-area">
+            <h3>Enemies Available to Attack</h3>
+            <div id="enemies"></div>
+        </section>
+
+        <section id="fighting-section">
+            <button id="attack-button">Attack</button>
+        </section>
+
+        <section id="defender-area">
+            <h3>Defender</h3>
+            <div id="defender"></div>
+        </section>
+
+        <button id="restart-button">Restart</button>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/javascript/game.js"></script>
