@@ -23,7 +23,7 @@ body {
 	padding: 20px 0;
 }
 
-#characters {
+#characters, #my-character, #enemies, #defender {
 	display: flex;
 	justify-content: space-evenly;
 	margin-bottom: 20px;
