@@ -150,6 +150,8 @@ $("#restart-button").click(function () {
 		el.appendTo("#characters");
 	});
 
-
+	// Clears character list to prevent shadow-copy elements from previous games
+	charactersList = [];
+	cloneCharacters();
 
 });
