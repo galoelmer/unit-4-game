@@ -46,6 +46,8 @@ function cloneCharacters() {
 $("#attack-button").hide();
 $("#restart-button").hide();
 $("#attack-message").hide();
+$("#enemies-area").hide();
+$("#defender-area").hide();
 
 //jQuery selector add click event to each character
 $(".card-character").on("click", function () {
@@ -61,6 +63,7 @@ $(".card-character").on("click", function () {
 
 		$(this).appendTo("#defender");
 		$("#attack-button").show();
+		$("#defender-area").show();
 		$("#enemies-area").hide();
 
 		// Makes a deep copy of characterData and store it in a global variable
@@ -74,8 +77,9 @@ $(".card-character").on("click", function () {
 		$("#my-character-area > h3").text("Your Character");
 		$(this).appendTo("#my-character");
 		$(this).addClass("greenBorder");
+		$("#enemies-area").show();
 		$(this).off(); // Removes click event
-		
+
 		// Makes a deep copy of characterData and store it in a global variable
 		playerCharacterData = jQuery.extend(true, {}, characterData);
 	}
@@ -147,6 +151,8 @@ $("#attack-button").click(function () {
 
 		$("#my-character-area > h3").text("Winner!!!");
 		$("#restart-button").show();
+		$("#defender-area").hide();
+		$("#enemies-area").hide();
 
 	}
 });
@@ -154,6 +160,11 @@ $("#attack-button").click(function () {
 //jQuery selector add click event to restart button
 $("#restart-button").click(function () {
 
+	$("#attack-button").hide();
+	$("#restart-button").hide();
+	$("#attack-message").hide();
+	$("#enemies-area").hide();
+	$("#defender-area").hide();
 	$("#my-character").empty();
 	$("#restart-button").hide();
 	$("#my-character-area > h3").text("Choose a Character");
