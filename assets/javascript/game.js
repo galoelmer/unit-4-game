@@ -29,6 +29,19 @@ var mainCharacters = {
 
 var playerCharacterData;
 var defenderData;
+var charactersList = [];
+
+// Function makes deep copy with events of character elements and 
+// stores copy in characterList
+function cloneCharacters() {
+
+	$("#characters").children().each(function () {
+
+		charactersList.push($(this).clone(true));
+
+	});
+
+}
 
 $("#attack-button").hide();
 $("#restart-button").hide();
@@ -67,6 +80,8 @@ $(".card-character").on("click", function () {
 		.children()
 		.appendTo("#enemies");
 });
+
+cloneCharacters();
 
 //jQuery selector add click event to Attack button 
 $("#attack-button").click(function () {
@@ -115,4 +130,18 @@ $("#attack-button").click(function () {
 		$("#restart-button").show();
 
 	}
+});
+
+//jQuery selector add click event to restart button
+$("#restart-button").click(function () {
+
+	$("#my-character").empty();
+	$("#restart-button").hide();
+	$("#my-character-area > h3").text("Choose a Character");
+
+	// Appends original character elements to characters section
+	charactersList.forEach(function (el) {
+		el.appendTo("#characters");
+	});
+
 });
