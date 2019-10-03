@@ -60,6 +60,7 @@ $(".card-character").on("click", function () {
 
 		$(this).appendTo("#defender");
 		$("#attack-button").show();
+		$("#enemies-area").hide();
 
 		// Makes a deep copy of characterData and store it in a global variable
 		defenderData = jQuery.extend(true, {}, characterData);
@@ -111,6 +112,7 @@ $("#attack-button").click(function () {
 	if (defenderData["Health Points"] < 0) {
 
 		$("#attack-button").hide();
+		$("#enemies-area").show();
 		$("#defender").empty();
 
 	}
@@ -148,6 +150,6 @@ $("#restart-button").click(function () {
 		el.appendTo("#characters");
 	});
 
-	
+
 
 });
