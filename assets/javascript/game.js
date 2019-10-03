@@ -70,10 +70,11 @@ $(".card-character").on("click", function () {
 	// the click character to Player character section
 	if ($("#my-character").children().length == 0) {
 
+		$("#my-character-area > h3").text("Your Character");
 		$(this).appendTo("#my-character");
 		$(this).addClass("greenBorder");
-		$("#my-character-area > h3").text("Your Character");
-
+		$(this).off(); // Removes click event
+		
 		// Makes a deep copy of characterData and store it in a global variable
 		playerCharacterData = jQuery.extend(true, {}, characterData);
 	}
