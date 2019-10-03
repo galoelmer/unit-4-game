@@ -1,29 +1,29 @@
 var mainCharacters = {
 	obiwan: {
 		name: "Obi-Wan Kenobi",
-		"Health Points": 120,
-		"Attack Power": 6,
-		"Counter Attack": 4
+		"Health Points": 150,
+		"Attack Power": 8,
+		"Counter Attack": 20
 	},
 
 	grievous: {
 		name: "General Grievous",
-		"Health Points": 150,
-		"Attack Power": 5,
-		"Counter Attack": 4
+		"Health Points": 100,
+		"Attack Power": 8,
+		"Counter Attack": 6
 	},
 
 	dooku: {
 		name: "Count Dooku",
-		"Health Points": 200,
-		"Attack Power": 8,
-		"Counter Attack": 6
+		"Health Points": 180,
+		"Attack Power": 10,
+		"Counter Attack": 25
 	},
 	anakin: {
 		name: "Anakin Skywalker",
-		"Health Points": 130,
+		"Health Points": 120,
 		"Attack Power": 8,
-		"Counter Attack": 4
+		"Counter Attack": 16
 	}
 }
 
@@ -138,9 +138,14 @@ $("#attack-button").click(function () {
 	// restart button becomes visible
 	if (playerCharacterData["Health Points"] < 0) {
 
+		$("#enemies").empty();
+		$("#defender").empty()
+		$("#enemies-area").hide();
+		$("#defender-area").hide();
 		$("#attack-button").hide();
+		$("#attack-message").hide();
 		$("#restart-button").show();
-		$("#my-character-area > h3").text("Defeated");
+		$("#my-character-area > h3").text("You Lose");
 
 	}
 
