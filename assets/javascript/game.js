@@ -17,7 +17,7 @@ var mainCharacters = {
 		name: "Count Dooku",
 		"Health Points": 180,
 		"Attack Power": 10,
-		"Counter Attack": 25
+		"Counter Attack": 22
 	},
 	anakin: {
 		name: "Anakin Skywalker",
@@ -123,7 +123,7 @@ $("#attack-button").click(function () {
 	$("#defender #hp").text(defenderData["Health Points"]);
 
 	// If Defender character HP is less than zero, remove Defender character from DOM
-	if (defenderData["Health Points"] < 0) {
+	if (defenderData["Health Points"] < 1) {
 
 		$("#defender-message").text("");
 		$("#player-message").text("");
@@ -136,7 +136,7 @@ $("#attack-button").click(function () {
 
 	// If Player character HP is less than zero, player lose and 
 	// restart button becomes visible
-	if (playerCharacterData["Health Points"] < 0) {
+	if (playerCharacterData["Health Points"] < 1) {
 
 		$("#enemies").empty();
 		$("#defender").empty()
@@ -152,7 +152,8 @@ $("#attack-button").click(function () {
 	// If enemies section has no children elements, player wins and
 	// restart button becomes visible
 	if ($("#enemies").children().length == 0 &&
-		$("#defender").children().length == 0) {
+		$("#defender").children().length == 0 && 
+		playerCharacterData["Health Points"] > 0) {
 
 		$("#my-character-area > h3").text("Winner!!!");
 		$("#restart-button").show();
