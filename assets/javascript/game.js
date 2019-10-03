@@ -45,6 +45,7 @@ function cloneCharacters() {
 
 $("#attack-button").hide();
 $("#restart-button").hide();
+$("#attack-message").hide();
 
 //jQuery selector add click event to each character
 $(".card-character").on("click", function () {
@@ -92,6 +93,14 @@ cloneCharacters();
 //jQuery selector add click event to Attack button 
 $("#attack-button").click(function () {
 
+	$("#attack-message").show();
+
+	//Attack message status for chosen player
+	$("#player-message").text("You attacked " + defenderData.name + " for " + playerCharacterData["Attack Power"] + " damage.");
+
+	//Attack message status from defender
+	$("#defender-message").text(defenderData.name + " attacked back for " + defenderData["Counter Attack"] + " damage.");
+
 	// Defender character lose Health Points
 	defenderData["Health Points"] -= playerCharacterData["Attack Power"];
 
@@ -112,6 +121,9 @@ $("#attack-button").click(function () {
 	// If Defender character HP is less than zero, remove Defender character from DOM
 	if (defenderData["Health Points"] < 0) {
 
+		$("#defender-message").text("");
+		$("#player-message").text("");
+		$("#attack-message").hide();
 		$("#attack-button").hide();
 		$("#enemies-area").show();
 		$("#defender").empty();
