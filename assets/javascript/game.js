@@ -68,7 +68,10 @@ $(".card-character").on("click", function () {
 	// If Player character section has no children elements,then append the 
 	// the click character to Player character section
 	if ($("#my-character").children().length == 0) {
+
 		$(this).appendTo("#my-character");
+		$(this).addClass("greenBorder");
+		$("#my-character-area > h3").text("Your Character");
 
 		// Makes a deep copy of characterData and store it in a global variable
 		playerCharacterData = jQuery.extend(true, {}, characterData);
@@ -79,6 +82,7 @@ $(".card-character").on("click", function () {
 	$("#characters")
 		.children()
 		.appendTo("#enemies");
+	$("#enemies").children().addClass("redBorder");
 });
 
 cloneCharacters();
