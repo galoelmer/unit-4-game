@@ -144,4 +144,6 @@ $("#restart-button").click(function () {
 		el.appendTo("#characters");
 	});
 
+	
+
 });
