@@ -1,3 +1,31 @@
+var mainCharacters = {
+	obiwan: {
+		name: "Obi-Wan Kenobi",
+		"Health Points": 120,
+		"Attack Power": 6,
+		"Counter Attack": 4
+	},
+
+	grievous: {
+		name: "General Grievous",
+		"Health Points": 150,
+		"Attack Power": 5,
+		"Counter Attack": 4
+	},
+
+	dooku: {
+		name: "Count Dooku",
+		"Health Points": 200,
+		"Attack Power": 8,
+		"Counter Attack": 6
+	},
+	anakin: {
+		name: "Anakin Skywalker",
+		"Health Points": 130,
+		"Attack Power": 8,
+		"Counter Attack": 4
+	}
+}
 
 //jQuery selector add click event to each character
 $(".card-character").on("click", function () {
