@@ -1,7 +1,17 @@
 import './reset.css';
 import './style.css';
 
-var mainCharacters = {
+interface CharacterSkills {
+  name: string;
+  "Health Points": number;
+  "Attack Power": number;
+  "Counter Attack": number;
+}
+interface MainCharacters {
+    [key: string]: CharacterSkills
+}
+
+var mainCharacters: MainCharacters = {
   obiwan: {
     name: "Obi-Wan Kenobi",
     "Health Points": 150,
@@ -30,9 +40,9 @@ var mainCharacters = {
   },
 };
 
-var playerCharacterData;
-var defenderData;
-var charactersList = [];
+var playerCharacterData: CharacterSkills;
+var defenderData: CharacterSkills;
+var charactersList: JQuery<HTMLElement>[] = [];
 
 // Function makes deep copy with events of character elements and
 // stores copy in characterList

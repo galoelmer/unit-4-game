@@ -11,7 +11,7 @@ module.exports = {
     filename: "[name].[contenthash:10].js",
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/images/[hash:5][ext][query]",
-    clear: true,
+    clean: true,
   },
   resolve: {
     extensions: [".ts", ".js"],
@@ -28,8 +28,12 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(gif)$/i,
+        test: /\.(gif|jpg)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
     ],
   },
